@@ -1,0 +1,177 @@
+/* Zelo: termos, privacidade e suporte.
+   Sem fonte, script ou imagem de terceiros: página de privacidade que
+   entrega o seu endereço IP a outro serviço só para abrir seria contradição. */
+
+:root {
+  color-scheme: light dark;
+  --marca: #2563EB;
+  --marca-funda: #1D4ED8;
+  --marca-suave: #E8EFFD;
+  --fundo: #F8FAFC;
+  --superficie: #FFFFFF;
+  --texto: #1E293B;
+  --texto-2: #475569;
+  --texto-3: #64748B;
+  --borda: #E2E8F0;
+  --atencao: #92600A;
+  --atencao-suave: #FEF3D7;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --marca: #7FA6F8;
+    --marca-funda: #A9C3FA;
+    --marca-suave: #17233D;
+    --fundo: #0B1120;
+    --superficie: #111A2E;
+    --texto: #E6ECF5;
+    --texto-2: #B4C0D3;
+    --texto-3: #8592A8;
+    --borda: #22304A;
+    --atencao: #F2C46D;
+    --atencao-suave: #2B2210;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 48px 16px 96px;
+  background: var(--fundo);
+  color: var(--texto);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+main { max-width: 680px; margin: 0 auto; }
+
+a { color: var(--marca); text-underline-offset: 3px; }
+a:hover { color: var(--marca-funda); }
+
+.voltar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 32px;
+  color: var(--texto-3);
+  font-size: 14px;
+  text-decoration: none;
+}
+.voltar:hover { color: var(--marca); }
+
+.marca {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 20px;
+  vertical-align: middle;
+}
+.marca i {
+  display: block;
+  width: 5px;
+  border-radius: 2px;
+  background: var(--marca);
+}
+.marca i:nth-child(1) { height: 30%; }
+.marca i:nth-child(2) { height: 48%; }
+.marca i:nth-child(3) { height: 66%; }
+
+h1, h2, h3 { line-height: 1.25; text-wrap: balance; }
+h1 { font-size: 32px; letter-spacing: -0.02em; margin: 0 0 8px; }
+h2 { font-size: 20px; margin: 48px 0 12px; }
+h3 { font-size: 16px; margin: 24px 0 8px; }
+
+p, ul, ol { margin: 0 0 16px; }
+ul, ol { padding-left: 24px; }
+li { margin-bottom: 8px; }
+li::marker { color: var(--texto-3); }
+
+.data { color: var(--texto-3); font-size: 14px; margin-bottom: 32px; }
+
+.ficha {
+  margin: 0 0 32px;
+  padding: 16px 24px;
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  background: var(--superficie);
+}
+.ficha p { margin: 8px 0; }
+
+.atencao {
+  margin: 24px 0;
+  padding: 16px 24px;
+  border-radius: 16px;
+  background: var(--atencao-suave);
+}
+.atencao strong { color: var(--atencao); }
+.atencao p:last-child { margin-bottom: 0; }
+
+.tabela { overflow-x: auto; margin: 0 0 16px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td {
+  padding: 12px 12px 12px 0;
+  border-bottom: 1px solid var(--borda);
+  text-align: left;
+  vertical-align: top;
+}
+th { color: var(--texto-3); font-weight: 600; }
+
+.passos { counter-reset: passo; list-style: none; padding: 0; }
+.passos li {
+  counter-increment: passo;
+  position: relative;
+  padding-left: 40px;
+  margin-bottom: 12px;
+}
+.passos li::before {
+  content: counter(passo);
+  position: absolute;
+  left: 0;
+  top: 1px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--marca-suave);
+  color: var(--marca);
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+  line-height: 26px;
+}
+
+.links { list-style: none; padding: 0; margin: 32px 0; }
+.links li { margin: 0; border-top: 1px solid var(--borda); }
+.links li:last-child { border-bottom: 1px solid var(--borda); }
+.links a {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 0;
+  color: var(--texto);
+  text-decoration: none;
+}
+.links a span { color: var(--texto-3); font-size: 14px; }
+.links a:hover strong { color: var(--marca); }
+
+footer {
+  max-width: 680px;
+  margin: 64px auto 0;
+  padding-top: 24px;
+  border-top: 1px solid var(--borda);
+  color: var(--texto-3);
+  font-size: 14px;
+}
+footer nav { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 8px; }
+footer a { color: var(--texto-2); }
+
+code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.9em;
+  padding: 1px 6px;
+  border-radius: 6px;
+  background: var(--marca-suave);
+}
